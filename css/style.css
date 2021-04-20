@@ -25,6 +25,7 @@ body {
     width: 250px;
     height: 50px;
     font-size: 25px;
+    border-radius: 15px;
 }
 
 #submit_button_div{
@@ -69,5 +70,5 @@ body {
 }
 
 #myLIST{
-    
+    display: flex;
 }
