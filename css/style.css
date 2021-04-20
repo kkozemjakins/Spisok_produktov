@@ -60,7 +60,7 @@ body {
     font-size: 20px;
 }
 
-.stroka_v_list{
+#stroka_v_ul{
     display: flex;
    margin-top: 70px;
    margin-left: -360px;
