@@ -1,6 +1,33 @@
 console.log("rabotaet");
 
-let listas = []
+let listas_js = []
+
+window.addEventListener('load', () => {
+    listas_js = JSON.parse(localStorage.getItem("listas_js") || "[]");
+    console.log(listas_js)
+    render();
+});
+
+window.addEventListener('load', () => {
+    console.log(listas_js);
+    render();
+});
+
+function render() {
+    let stroka_v_ul = document.getElementById('div_ul');
+    stroka_v_ul.innerHTML = "";
+
+    for(let i = 0; i < listas_js.length; i++) {
+        let list = `
+        <li id="stroka_v_ul">Product:${listas_js[i].product}<button id="btn_delete">X</button></li>
+        <li id="nd_stroka_v_ul">Amount:${listas_js[i].amount} </li>`;
+
+        stroka_v_ul.innerHTML += list;
+    };
+
+    product.value = "";
+    amount.value = "";
+};
 
 document.getElementById("submit").addEventListener('click', newList);
 
@@ -15,30 +42,17 @@ function newList(){
         alert('You must write amount of product')
     };
 
+    if (amount.value && product.value  != '') {
+        
+    
+        let list = {product: product.value, amount: amount.value};
 
-    let list = {product: product.value, amount: amount.value};
+        console.log(list);
 
-    console.log(list);
+        listas_js.push(list);
 
-    product.value = "";
-    amount.value = "";
+        render()
+    };
 
-    listas.push(list);
-
-    render()
-};
-
-function render() {
-    let  = document.getElementById('myLIST');
-    stroka_v_ul.innerHTML = "";
-
-    for(let i = 0; i < list.length; i++) {
-        let li = `
-        <li id="stroka_v_ul">Product:${stroka_v_list[i].product}    Amount:${stroka_v_list[i].amount} </li>`;
-
-        list.innerHTML += stroka_v_list;
-    }
-
-
-    localStorage.setItem("list",JSON.stringify(stroka_v_list))
+    localStorage.setItem("listas_js", JSON.stringify(listas_js))
 };

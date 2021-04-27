@@ -6,9 +6,8 @@ body {
     display: flex;
     justify-content: center;
     background-color: aliceblue;
-    height: 500px;
-    margin-left: 750px;
-    margin-right: 750px;
+    margin-left: 705px;
+    width: 500px;
 } 
 
 #name_of_list{
@@ -62,13 +61,29 @@ body {
 
 #stroka_v_ul{
     display: flex;
-   margin-top: 70px;
+   margin-top: 90px;
    margin-left: -360px;
    font-size:20pt;
    font-family: monospace;
    
 }
 
+#nd_stroka_v_ul{
+    display: flex;
+    margin-left: -360px;
+    font-size:20pt;
+    font-family: monospace;
+
+}
+
 #myLIST{
     display: flex;
 }
+
+#btn_delete {
+    position: absolute;
+    right: 750px;
+    padding: 12px 16px 12px 16px;
+    font-size: 15pt;
+    border-radius: 5px;
+  }
