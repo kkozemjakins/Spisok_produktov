@@ -11,11 +11,16 @@ window.addEventListener('load', () => {
 const list = document.querySelector('#div_ul')
 
 list.addEventListener('click', (e) => {
-    if(e.target.className == 'btn_delete'){
-      const li = e.target.parentElement;
-      li.parentNode.removeChild(li);
-      listas_js.splice(li, 1);
-      localStorage.setItem('listas_js',JSON.stringify(listas_js));
+    let delete_check = confirm("Are you sure you want to delete this?")
+
+
+    if (delete_check == true) {
+        if(e.target.className == 'btn_delete'){
+        const li = e.target.parentElement;
+        li.parentNode.removeChild(li);
+        listas_js.splice(li, 1);
+        localStorage.setItem('listas_js',JSON.stringify(listas_js));
+        }
     }
   });
 
@@ -26,11 +31,9 @@ function render() {
     for(let i = 0; i < listas_js.length; i++) {
         let list = `
         <li class="stroka_v_ul">
-            <div>
-                <p>Product:${listas_js[i].product}</p>
-                <p id="nd_stroka_v_ul">Amount:${listas_js[i].amount}</p>
-                <button class="btn_delete">X</button>
-            </div>
+            <p>Product:${listas_js[i].product}</p>
+            <p id="nd_stroka_v_ul">Amount:${listas_js[i].amount}</p>
+            <button class="btn_delete">X</button>
         </li>`;
 
         stroka_v_ul.innerHTML += list;

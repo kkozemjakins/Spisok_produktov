@@ -69,9 +69,9 @@ body {
 }
 
 #nd_stroka_v_ul{
-    display: flex;
+    position: fixed;
+    left: 764px;
     margin-top: 50px;
-    margin-left: -175px;
     font-size:20pt;
     font-family: monospace;
 }
@@ -83,4 +83,4 @@ body {
     padding: 12px 16px 12px 16px;
     font-size: 15pt;
     border-radius: 5px;
-  }
+}
